@@ -8,7 +8,7 @@
     ]
   },
   "scripts": {
-    "start": "beefy index.js --open",
+    "start": "beefy index.js:bundle.js --open",
     "pages": "browserify index.js -o bundle.js"
   },
   "dependencies": {
