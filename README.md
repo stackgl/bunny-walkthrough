@@ -21,6 +21,7 @@ npm start
 
 * [bunny](http://github.com/mikolalysenko/bunny)
 * [glslify](http://github.com/stackgl/glslify)
+* [browserify](http://browserify.org/)
 * [canvas-orbit-camera](http://github.com/hughsk/canvas-orbit-camera)
 * [simplicial-complex](http://github.com/mikolalysenko/simplicial-complex)
 * [gl-matrix](http://github.com/toji/gl-matrix)
