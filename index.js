@@ -1,3 +1,4 @@
+var Shader   = require('gl-shader')
 var Geometry = require('gl-geometry')
 var fit      = require('canvas-fit')
 var mat4     = require('gl-mat4')
@@ -62,10 +63,10 @@ var width
 // step ahead of time. We can make some dramatic file size
 // savings by doing this in Node rather then at runtime in
 // the browser.
-var shader = glslify({
-    vert: './shaders/bunny.vert'
-  , frag: './shaders/bunny.frag'
-})(gl)
+var shader = Shader(gl, 
+  glslify('./shaders/bunny.vert'),
+  glslify('./shaders/bunny.frag')
+)
 
 // The logic/update loop, which updates all of the variables
 // before they're used in our render function. It's optional
@@ -99,7 +100,11 @@ function update() {
   )
 }
 
+var rendered = false
+
 function render() {
+  if (rendered)
+    return false
   update()
 
   // Sets the viewport, i.e. tells WebGL to draw the
@@ -128,4 +133,5 @@ function render() {
   // Finally: draws the bunny to the screen! The rest is
   // handled in our shaders.
   geometry.draw(gl.TRIANGLES)
+  rendered = true
 }
