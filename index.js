@@ -100,11 +100,7 @@ function update() {
   )
 }
 
-var rendered = false
-
 function render() {
-  if (rendered)
-    return false
   update()
 
   // Sets the viewport, i.e. tells WebGL to draw the
@@ -133,5 +129,4 @@ function render() {
   // Finally: draws the bunny to the screen! The rest is
   // handled in our shaders.
   geometry.draw(gl.TRIANGLES)
-  rendered = true
 }
