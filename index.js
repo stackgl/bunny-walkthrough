@@ -1,5 +1,6 @@
 var Geometry = require('gl-geometry')
 var fit      = require('canvas-fit')
+var glShader = require('gl-shader')
 var mat4     = require('gl-mat4')
 var normals  = require('normals')
 var glslify  = require('glslify')
@@ -62,10 +63,10 @@ var width
 // step ahead of time. We can make some dramatic file size
 // savings by doing this in Node rather then at runtime in
 // the browser.
-var shader = glslify({
-    vert: './shaders/bunny.vert'
-  , frag: './shaders/bunny.frag'
-})(gl)
+var shader = glShader(gl,
+    glslify('./shaders/bunny.vert')
+  , glslify('./shaders/bunny.frag')
+)
 
 // The logic/update loop, which updates all of the variables
 // before they're used in our render function. It's optional
