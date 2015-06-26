@@ -20,7 +20,8 @@
     "gl-context": "^0.1.1",
     "gl-geometry": "^1.0.0",
     "gl-mat4": "^1.0.0",
-    "glslify": "^1.6.0",
+    "gl-shader": "^4.0.5",
+    "glslify": "^2.2.1",
     "normals": "^0.1.0"
   }
 }
